@@ -55,9 +55,9 @@ while getopts "cdh" OPTION; do
                         ;;
                 h)
                         echo "Usage:"
-                        echo "args.sh -h for help"
-                        echo "args.sh -c for Creating resources"
-                        echo "args.sh -d for Deleting resources"
+                        echo "utility.sh -h for help"
+                        echo "utility.sh -c for Creating resources"
+                        echo "utility.sh -d for Deleting resources"
                         echo ""
                         echo "   -h   help (this output)"
                         exit 0
