@@ -10,7 +10,7 @@ Implementation of Kubernetes deployment of a Simple Hello World HTTP server to D
 ---
  - On kubernetes master, Checkout this exmaple using following command
     ```
-    git clone -b kubernetes-environment https://github.com/k2io/kubernetes-environment.git
+    git clone -b kubernetes-environment https://github.com/Shardy153/kubernetes-example.git
     cd kubernetes-environment
     ```
  ## Run
