@@ -1,0 +1,40 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+ name: staging
+ labels:
+   name: staging
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: staging-deployment
+  namespace: staging
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: helloworld
+        image: strm/helloworld-http
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: staging-service
+  namespace: staging
+spec:
+  selector:
+    app: helloworld
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80
+    nodePort: 30003
