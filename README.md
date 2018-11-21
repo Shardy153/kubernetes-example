@@ -1,4 +1,4 @@
-# Kubernetes environment exmaple
+# Kubernetes environment example
 ---
 Implementation of Kubernetes deployment of a Simple Hello World HTTP server to DEV, TEST and STAGING environments.
 ## Prerequisites
@@ -10,8 +10,8 @@ Implementation of Kubernetes deployment of a Simple Hello World HTTP server to D
 ---
  - On kubernetes master, Checkout this exmaple using following command
     ```
-    git clone -b kubernetes-environment https://github.com/Shardy153/kubernetes-example.git
-    cd kubernetes-environment
+    git clone https://github.com/Shardy153/kubernetes-example.git
+    cd kubernetes-example
     ```
  ## Run
  ---
