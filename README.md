@@ -17,21 +17,20 @@ Implementation of Kubernetes deployment of a Simple Hello World HTTP server to D
  ---
  - This command will create all the required resources.
     ```
-    sh utility.sh -c
+    sh utility.sh -i
     ```
  - This command will delete all the created resources by build shell script.
 
     ```
-    sh utility.sh -d
+    sh utility.sh -u
     ```
 
 ## References
 ---
-- https://blog.ubuntu.com/2017/10/06/kubernetes-on-ubuntu-vms
+- https://github.com/kubernetes-incubator/kubespray
 
 ## Few Important Notes
 ---
-- This examples contains 3 YAML files, one YAML for each environment i.e. dev, test and staging.
 - After running build shell script, following resources will be created:
     - 3 namespaces named as dev, test and staging.
     - A deployment in each namespace, which consists of 2 pods and each pod hosts a simple Hello World HTTP server.
