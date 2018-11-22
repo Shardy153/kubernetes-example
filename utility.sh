@@ -2,20 +2,20 @@
 
 install()
 {
-  cd dev
   echo "Creating dev environment...!!"
+  sed  's/__env__/dev/g;s/__port__/30001/g'  template.yaml > deploy-dev.yaml
   kubectl create -f deploy-dev.yaml
   echo "Sleeping for 5 seconds...!!\n"
   sleep 5
 
-  cd ../test
   echo "Creating test environment...!!"
+  sed  's/__env__/test/g;s/__port__/30002/g'  template.yaml > deploy-test.yaml
   kubectl create -f deploy-test.yaml
   echo "Sleeping for 5 seconds...!!\n"
   sleep 5
 
-  cd ../staging
   echo "Creating staging environment...!!"
+  sed  's/__env__/staging/g;s/__port__/30003/g'  template.yaml > deploy-staging.yaml
   kubectl create -f deploy-staging.yaml
   echo "Sleeping for 5 seconds...!!\n"
   sleep 5
@@ -45,19 +45,19 @@ then
         exit 0
 fi
 
-while getopts "cdh" OPTION; do
+while getopts "iuh" OPTION; do
         case $OPTION in
-                c)
+                i)
                         install
                         ;;
-                d)
+                u)
                         uninstall
                         ;;
                 h)
                         echo "Usage:"
                         echo "utility.sh -h for help"
-                        echo "utility.sh -c for Creating resources"
-                        echo "utility.sh -d for Deleting resources"
+                        echo "utility.sh -i for installtaion"
+                        echo "utility.sh -u for uninstallation"
                         echo ""
                         echo "   -h   help (this output)"
                         exit 0
