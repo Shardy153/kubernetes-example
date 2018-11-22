@@ -23,15 +23,12 @@ install()
 
 uninstall()
 {
-  cd dev
   echo "Deleting dev environment along with its resources"
   kubectl delete -f deploy-dev.yaml
-
-  cd ../test
+  
   echo "Deleting test environment along with its resources"
   kubectl delete -f deploy-test.yaml
-
-  cd ../staging
+  
   echo "Deleting staging environment along with its resources"
   kubectl delete -f deploy-staging.yaml
 }
