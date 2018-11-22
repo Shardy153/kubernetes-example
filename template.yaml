@@ -1,0 +1,40 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+ name: __env__
+ labels:
+   name: __env__
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: __env__-deployment
+  namespace: __env__
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: helloworld
+        image: strm/helloworld-http
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: __env__-service
+  namespace: __env__
+spec:
+  selector:
+    app: helloworld
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80
+    nodePort: __port__
