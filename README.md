@@ -1,4 +1,4 @@
-# Kubernetes environment exmaple
+# Kubernetes environment Example
 ---
 Implementation of Kubernetes deployment of a Simple Hello World HTTP server to DEV, TEST and STAGING environments.
 ## Prerequisites
